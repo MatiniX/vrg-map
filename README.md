@@ -1,30 +1,39 @@
-# React + TypeScript + Vite
+# Demo pre VR Group, a.s. (Frontend vývojář junior/medior/senior)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Spustenie
 
-Currently, two official plugins are available:
+**Vite dev server**
+Ak máte nainštalovaný Node.js tak stačí `npm install` v priečinku a následne `npm run dev`. Aplikácia sa spustí na porte 8080.
+**Docker**
+Aplikácia obshahuje aj Dockerfile takže je možné ju spustiť aj cez Docker
+`docker build .`
+Skopírujte id buildnutého image alebo si ho predtým otagujte `docker build . -t "sample-tag"`
+Následne už len `docker run -p  8080:8080 [tag alebo id]`
+Aplikácia by mala byť dostupná na porte 8080
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Ovládanie
 
-## Expanding the ESLint configuration
+Aplikácia má 3 nástroje.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. Meranie dĺžky
 
-- Configure the top-level `parserOptions` property like this:
+- Ikona pravítka
+- Je možne kliknúť dva body na mape a následne zonbrazi vzdialenosť medi nimi a pochodový uhol
+- Keď je tento nástroj aktívny je možné prejsť do editovacieho módu stlačením Tab. Potom je možné zadať presnú vzdialenosť aj pochodový uhol.
+  Pomocou klávesy Tab je možné prepínať medzi zadavaním vzdialenosti a uhlu. Je možné zadať vzdialenosť vo formáte "100km" alebo "100m" aplikácie potom skonvertuje jednotky.
+  Pri uhl je možné zadať hodnotu vo formáte "1rad" vtedy aplikácia použije radiány. Ak nezadáte žiadne znaky iba čísla východzie jendnotky sú metre a stupne.
+  Kontrola na vstupe nie je lebo sa jedná len o demo.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+2. Merania úhlu
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- Ikona úhlu
+- Po zvolenní troch bodov na mape vám zobrazí uhol medzi nimi vždy v rozsahu 0-180 stupňov
+
+3. Kreslenie polyčiary
+
+- Ikona polyčiary
+- Keď je nástroj aktívny umožňuje kresliť a modifikovať kreslenú polyčiaru
+- Kreslenie ukončíte držaním Shiftu a dvojitým kliknutím na posledný bod kde chcete aby sa polyčiara skončila
+- Modifikovať môžte keď je nástroj aktívny a držíte Ctrl. Je možné pridávať a upravovať body. Pri dvojkliku je možné body mazať.
+
+Posledné tlačidlo vymaže všetky kreslenia.
