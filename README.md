@@ -3,8 +3,11 @@
 ### Spustenie
 
 **Vite dev server**
+
 Ak máte nainštalovaný Node.js tak stačí `npm install` v priečinku a následne `npm run dev`. Aplikácia sa spustí na porte 8080.
+
 **Docker**
+
 Aplikácia obshahuje aj Dockerfile takže je možné ju spustiť aj cez Docker
 `docker build .`
 Skopírujte id buildnutého image alebo si ho predtým otagujte `docker build . -t "sample-tag"`
