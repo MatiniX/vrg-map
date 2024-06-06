@@ -10,6 +10,7 @@ Ak máte nainštalovaný Node.js tak stačí `npm install` v priečinku a násle
 
 Aplikácia obshahuje aj Dockerfile takže je možné ju spustiť aj cez Docker
 `docker build .`
+
 Skopírujte id buildnutého image alebo si ho predtým otagujte `docker build . -t "sample-tag"`
 Následne už len `docker run -p  8080:8080 [tag alebo id]`
 Aplikácia by mala byť dostupná na porte 8080
